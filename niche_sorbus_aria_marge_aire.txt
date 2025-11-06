@@ -1,0 +1,6 @@
+Aire bioclimatique par classe (km²):
+Classe 1 : 1660.53 km²
+Classe 2 : 2602.91 km²
+Classe 3 : 26202.97 km²
+Classe 4 : 1312.82 km²
+Classe 5 : 307.16 km²
