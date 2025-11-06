@@ -378,33 +378,28 @@ with tab_sim:
         if raster_selected:
             raster_path = os.path.join(data_dir, "Niche écologique par espèces", espece_selected, raster_selected)
             try:
-                # fallback de colormap si palette personnalisée non reconnue par leafmap
                 colormap_leafmap = colormap_selected
                 if colormap_selected == "ForetMarges":
                     colormap_leafmap = "viridis"
-                m.add_raster(
-                    raster_path,
-                    layer_name=raster_selected,
-                    colormap=colormap_leafmap,
-                    opacity=opacity_value
-                )
-            except ModuleNotFoundError as me:
-                msg = str(me)
-                if "localtileserver" in msg or "local tiles server" in msg.lower():
-                    st.error(
-                        "Impossibilité d'afficher le raster : localtileserver n'est pas installé dans l'environnement.\n"
-                        "Installez-le dans le venv et relancez l'application :\n\n"
-                        "`source .venv/bin/activate && pip install --prefer-binary localtileserver`"
+                if LTS_AVAILABLE:
+                    m.add_raster(
+                        raster_path,
+                        layer_name=raster_selected,
+                        colormap=colormap_leafmap,
+                        opacity=opacity_value
                     )
                 else:
-                    st.error(f"Module manquant : {me}")
+                    st.warning("localtileserver non disponible — affichage statique du raster (aperçu). "
+                               "Installez localtileserver pour l'affichage tuilé interactif.")
+                    _preview_raster_statique(raster_path, title=raster_selected, colormap=colormap_leafmap)
+            except ModuleNotFoundError as me:
+                st.error(f"Module manquant : {me}")
                 raise me
             except Exception as e:
-                # message explicite si localtileserver est requis mais absent
                 estr = str(e).lower()
                 if "localtileserver" in estr:
                     st.error(
-                        "Le package localtileserver est requis pour afficher ce raster via leafmap.\n"
+                        "Le package localtileserver est requis pour l'affichage tuilé interactif via leafmap.\n"
                         "Installez-le : `source .venv/bin/activate && pip install --prefer-binary localtileserver`"
                     )
                 else:
@@ -794,3 +789,34 @@ with tab_aide:
     - Utilisez l'onglet Analyse pour explorer les résultats.
     - Exportez ou rechargez un scénario dans l'onglet Export.
     """)
+
+# --- Détection de localtileserver + fonction de fallback (DOIT être définie avant l'usage) ---
+try:
+    import localtileserver as _lts  # noqa: F401
+    LTS_AVAILABLE = True
+    LTS_VERSION = getattr(_lts, "__version__", None)
+except Exception:
+    LTS_AVAILABLE = False
+    LTS_VERSION = None
+
+def _preview_raster_statique(raster_path, title=None, colormap="viridis"):
+    """Affiche un aperçu statique d'un raster via rasterio + matplotlib (fallback si localtileserver absent)."""
+    try:
+        import rasterio
+        import matplotlib.pyplot as _plt
+        import numpy as _np
+        if not os.path.exists(raster_path):
+            st.error(f"Fichier introuvable : {raster_path}")
+            return
+        with rasterio.open(raster_path) as src:
+            arr = src.read(1).astype(float)
+            arr[~_np.isfinite(arr)] = _np.nan
+            fig, ax = _plt.subplots(figsize=(8, 5))
+            im = ax.imshow(arr, cmap=colormap, origin="upper")
+            ax.set_title(title or f"Aperçu : {os.path.basename(raster_path)}")
+            ax.axis("off")
+            fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
+            st.pyplot(fig)
+            _plt.close(fig)
+    except Exception as e:
+        st.error(f"Aperçu statique impossible : {e}")
