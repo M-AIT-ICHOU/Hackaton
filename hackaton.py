@@ -457,8 +457,18 @@ with tab_sim:
                             colormap=colormap_leafmap,
                             opacity=opacity_value
                         )
+                    except ModuleNotFoundError as me:
+                        msg = str(me).lower()
+                        if "xarray" in msg or "rioxarray" in msg:
+                            st.error(
+                                "Module requis manquant (xarray / rioxarray). "
+                                "Installez-les : `pip3 install --prefer-binary localtileserver xarray rioxarray`"
+                            )
+                        else:
+                            st.error(f"Module manquant : {me}")
+                        st.warning("Affichage statique de secours (rasterio).")
+                        _preview_raster_statique(raster_path, title=raster_selected, colormap=colormap_leafmap)
                     except Exception as e:
-                        # log erreur et fallback statique
                         st.error(f"Erreur lors de m.add_raster : {e}")
                         st.warning("Affichage statique de secours (rasterio).")
                         _preview_raster_statique(raster_path, title=raster_selected, colormap=colormap_leafmap)
