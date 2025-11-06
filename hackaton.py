@@ -35,7 +35,6 @@ from rasterio.mask import mask
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
-import leafmap.foliumap as leafmap
 
 # --- Détection de localtileserver + fonction de fallback (DOIT être définie avant l'usage) ---
 try:
