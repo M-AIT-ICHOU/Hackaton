@@ -476,23 +476,28 @@ with tab_sim:
                     _preview_raster_statique(raster_path, title=raster_selected, colormap=colormap_leafmap)
                 else:
                     # tentative normale via leafmap / localtileserver
-                    try:
-                        m.add_raster(
-                            raster_path,
-                            layer_name=raster_selected,
-                            colormap=colormap_leafmap,
-                            opacity=opacity_value
-                        )
-                    except ModuleNotFoundError as me:
-                        msg = str(me).lower()
-                        if "xarray" in msg or "rioxarray" in msg:
-                            st.error("Module requis manquant (xarray / rioxarray). Installez-les : pip3 install --prefer-binary localtileserver xarray rioxarray")
-                        else:
-                            st.error(f"Module manquant : {me}")
+                    # s'assurer que le TileServer est accessible (ou tenter de le démarrer)
+                    if not ensure_tileserver_cli(raster_path, port=46479):
+                        st.warning("Serveur de tuiles local inaccessible — affichage statique en secours.")
                         _preview_raster_statique(raster_path, title=raster_selected, colormap=colormap_leafmap)
-                    except Exception as e:
-                        st.error(f"Erreur lors de m.add_raster : {e}")
-                        _preview_raster_statique(raster_path, title=raster_selected, colormap=colormap_leafmap)
+                    else:
+                        try:
+                            m.add_raster(
+                                raster_path,
+                                layer_name=raster_selected,
+                                colormap=colormap_leafmap,
+                                opacity=opacity_value
+                            )
+                        except ModuleNotFoundError as me:
+                            msg = str(me).lower()
+                            if "xarray" in msg or "rioxarray" in msg:
+                                st.error("Module requis manquant (xarray / rioxarray). Installez-les : pip3 install --prefer-binary localtileserver xarray rioxarray")
+                            else:
+                                st.error(f"Module manquant : {me}")
+                            _preview_raster_statique(raster_path, title=raster_selected, colormap=colormap_leafmap)
+                        except Exception as e:
+                            st.error(f"Erreur lors de m.add_raster : {e}")
+                            _preview_raster_statique(raster_path, title=raster_selected, colormap=colormap_leafmap)
             except ModuleNotFoundError as me:
                 st.error(f"Module manquant : {me}")
                 raise me
