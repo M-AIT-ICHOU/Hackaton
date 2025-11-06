@@ -1,0 +1,123 @@
+nohup: ignoring input
+ * Serving Flask app 'localtileserver.web.application'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:46479
+ * Running on http://10.0.3.95:46479
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [06/Nov/2025 21:51:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:21] "GET /static/tileserver/styles/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:21] "GET /static/tileserver/styles/cesium.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:21] "GET /static/tileserver/js/cesium.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:21] "GET /static/tileserver/styles/snackbar.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:25] "GET /api/tiles/4/8/5.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:25] "GET /api/tiles/6/33/23.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:25] "GET /api/tiles/5/16/11.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:25] "GET /api/tiles/3/4/2.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:25] "GET /api/tiles/8/132/93.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:25] "GET /api/tiles/8/132/92.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:25] "GET /api/tiles/8/132/94.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/8/131/92.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/8/131/93.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/8/131/94.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/8/133/92.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/8/133/93.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/8/133/94.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/7/66/46.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/7/66/47.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/8/132/91.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/8/133/91.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/8/131/91.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/7/65/46.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/7/65/47.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/7/66/45.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/2/2/1.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/7/65/45.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/6/33/22.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:26] "GET /api/tiles/6/32/23.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:28] "GET /api/tiles/1/1/0.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:32] "[36mGET /static/tileserver/js/cesium.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [06/Nov/2025 21:52:32] "[36mGET /static/tileserver/styles/snackbar.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [06/Nov/2025 21:52:32] "[36mGET /static/tileserver/styles/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [06/Nov/2025 21:52:32] "[36mGET /static/tileserver/styles/cesium.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [06/Nov/2025 21:52:33] "GET /api/tiles/1/1/0.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:33] "GET /api/tiles/2/2/1.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:33] "GET /api/tiles/3/4/2.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:33] "GET /api/tiles/4/8/5.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:34] "GET /api/tiles/5/16/11.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:34] "GET /api/tiles/6/32/23.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:34] "GET /api/tiles/6/33/23.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:34] "GET /api/tiles/6/33/22.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+/home/vscode/.local/lib/python3.11/site-packages/numpy/ma/core.py:509: RuntimeWarning: invalid value encountered in cast
+  fill_value = np.asarray(fill_value, dtype=ndtype)
+127.0.0.1 - - [06/Nov/2025 21:52:34] "GET /api/tiles/6/32/22.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/7/65/47.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/7/65/45.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/7/65/46.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/7/66/46.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/7/66/47.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/7/66/45.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/8/131/92.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/8/131/93.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/8/131/94.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/8/132/92.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/8/132/94.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/8/132/93.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/8/131/91.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/8/133/92.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/8/132/91.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/8/133/93.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/8/133/94.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
+127.0.0.1 - - [06/Nov/2025 21:52:35] "GET /api/tiles/8/133/91.png?filename=/workspaces/Hackaton/Niche%20écologique%20par%20espèces/niche_abies_alba/niche_abies_alba_dif.tif HTTP/1.1" 200 -
