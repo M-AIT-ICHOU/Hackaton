@@ -407,21 +407,61 @@ with tab_sim:
         
         if raster_selected:
             raster_path = os.path.join(data_dir, "Niche écologique par espèces", espece_selected, raster_selected)
+
+            # --- helper de debug pour le raster ---
+            def _check_raster_info(path):
+                info = {}
+                try:
+                    import rasterio
+                    if not os.path.exists(path):
+                        info["error"] = "Fichier introuvable"
+                        return info
+                    with rasterio.open(path) as src:
+                        info["exists"] = True
+                        info["dtype"] = str(src.dtypes[0]) if src.dtypes else None
+                        info["shape"] = (src.count, src.height, src.width)
+                        info["crs"] = str(src.crs) if src.crs else None
+                        info["bounds"] = tuple(src.bounds)
+                        try:
+                            arr = src.read(1, masked=True).astype(float)
+                            mask = ~np.isfinite(arr)
+                            info["valid_pixels"] = int(np.ma.count_masked(arr) == 0 and np.count_nonzero(~mask) or np.count_nonzero(~mask))
+                            info["min"] = float(np.nanmin(arr)) if np.isfinite(np.nanmin(arr)) else None
+                            info["max"] = float(np.nanmax(arr)) if np.isfinite(np.nanmax(arr)) else None
+                            info["nodata"] = src.nodata
+                        except Exception as ex:
+                            info["read_error"] = str(ex)
+                except Exception as ex:
+                    info["error"] = str(ex)
+                return info
+
+            info = _check_raster_info(raster_path)
+            st.sidebar.markdown("**Debug raster**")
+            st.sidebar.json(info)
+
             try:
                 colormap_leafmap = colormap_selected
                 if colormap_selected == "ForetMarges":
                     colormap_leafmap = "viridis"
-                if LTS_AVAILABLE:
-                    m.add_raster(
-                        raster_path,
-                        layer_name=raster_selected,
-                        colormap=colormap_leafmap,
-                        opacity=opacity_value
-                    )
-                else:
-                    st.warning("localtileserver non disponible — affichage statique du raster (aperçu). "
-                               "Installez localtileserver pour l'affichage tuilé interactif.")
+
+                # Si pas de pixels valides, afficher aperçu statique et avertir
+                if info.get("valid_pixels", 0) == 0:
+                    st.warning("Le raster contient peu ou pas de pixels valides — affichage statique à la place.")
                     _preview_raster_statique(raster_path, title=raster_selected, colormap=colormap_leafmap)
+                else:
+                    # tentative normale via leafmap / localtileserver
+                    try:
+                        m.add_raster(
+                            raster_path,
+                            layer_name=raster_selected,
+                            colormap=colormap_leafmap,
+                            opacity=opacity_value
+                        )
+                    except Exception as e:
+                        # log erreur et fallback statique
+                        st.error(f"Erreur lors de m.add_raster : {e}")
+                        st.warning("Affichage statique de secours (rasterio).")
+                        _preview_raster_statique(raster_path, title=raster_selected, colormap=colormap_leafmap)
             except ModuleNotFoundError as me:
                 st.error(f"Module manquant : {me}")
                 raise me
