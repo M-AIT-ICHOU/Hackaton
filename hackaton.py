@@ -70,6 +70,33 @@ def _preview_raster_statique(raster_path, title=None, colormap="viridis"):
 st.set_page_config(layout="wide")
 data_dir = "/workspaces/Hackaton"
 
+# filepath: 
+# ...existing code...
+import socket, subprocess, sys, os, time
+def ensure_tileserver_cli(raster_path: str, port: int = 46479, host: str = "0.0.0.0", timeout: float = 0.5) -> bool:
+    """Vérifie si 127.0.0.1:port est accessible ; sinon tente de lancer `python -m localtileserver` en arrière-plan."""
+    try:
+        with socket.create_connection(("127.0.0.1", port), timeout=timeout):
+            return True
+    except Exception:
+        pass
+    # tente de démarrer la CLI localtileserver
+    try:
+        cmd = [sys.executable, "-m", "localtileserver", raster_path, "--host", host, "--port", str(port), "--browser", "False"]
+        logpath = os.path.join(os.getcwd(), "localtileserver_autostart.log")
+        with open(logpath, "a") as logf:
+            subprocess.Popen(cmd, stdout=logf, stderr=logf, start_new_session=True)
+        # courte attente
+        time.sleep(0.6)
+        try:
+            with socket.create_connection(("127.0.0.1", port), timeout=timeout):
+                return True
+        except Exception:
+            return False
+    except Exception:
+        return False
+# ...existing code...
+
 # --- Gestion centralisée des fonds de carte ---
 fond_leafmap = {
     "OpenStreetMap": "OpenStreetMap",
@@ -459,17 +486,12 @@ with tab_sim:
                     except ModuleNotFoundError as me:
                         msg = str(me).lower()
                         if "xarray" in msg or "rioxarray" in msg:
-                            st.error(
-                                "Module requis manquant (xarray / rioxarray). "
-                                "Installez-les : `pip3 install --prefer-binary localtileserver xarray rioxarray`"
-                            )
+                            st.error("Module requis manquant (xarray / rioxarray). Installez-les : pip3 install --prefer-binary localtileserver xarray rioxarray")
                         else:
                             st.error(f"Module manquant : {me}")
-                        st.warning("Affichage statique de secours (rasterio).")
                         _preview_raster_statique(raster_path, title=raster_selected, colormap=colormap_leafmap)
                     except Exception as e:
                         st.error(f"Erreur lors de m.add_raster : {e}")
-                        st.warning("Affichage statique de secours (rasterio).")
                         _preview_raster_statique(raster_path, title=raster_selected, colormap=colormap_leafmap)
             except ModuleNotFoundError as me:
                 st.error(f"Module manquant : {me}")
