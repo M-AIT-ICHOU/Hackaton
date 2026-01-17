@@ -1,10 +1,13 @@
 streamlit
-numpy
 pandas
+numpy
 matplotlib
+openpyxl
 plotly
 scikit-learn
 scipy
 psutil
 Pillow
 networkx
+
+
